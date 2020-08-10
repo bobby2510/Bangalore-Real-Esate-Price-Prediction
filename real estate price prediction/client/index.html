@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+        .active
+        {
+            box-shadow: 0px 0px 10px black;
+        }
+    </style>
+    <title>Real Estate Price Prediction</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <span class="navbar-brand mb-0 h1">Online Real Estate Price Predictor</span>
+      </nav>
+      <div class='container'>
+        <div class="card text-center mt-4">
+            <div class="card-header">
+                Online Real Estate Price Prediction
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Fill Your Requirments</h5>
+              <h6 id="error_message" class="mt-4" style="color: red;"></h6>
+              <div style="width: 600px;" class="mr-auto ml-auto p-2">
+                    <select class="form-control" id='locations' required>
+                      <option value="">Select Location</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                    <div>
+                        <input type="text" name="total_sqft" id="total_sqft" placeholder="Total Sqft" class="form-control mt-4">
+                    </div>
+                    <div >
+                        <p class='mt-4 text-muted'>select number of bedrooms</p>
+                        <label class="pt-2 pb-2 pl-3 pr-3" style="border:1px solid lightgrey; " id="bedroom"><input type="radio" name="bedroom" style="display: none;" id="bed" >1</label> 
+                        <label class="pt-2 pb-2 pl-3 pr-3" style="border:1px solid lightgrey;" id="bedroom"><input type="radio" style="display: none;" name="bedroom" id="bed" >2</label> 
+                        <label class="pt-2 pb-2 pl-3 pr-3" style="border:1px solid lightgrey;" id="bedroom"><input type="radio" style="display: none;" name="bedroom" id="bed" >3</label> 
+                        <label class="pt-2 pb-2 pl-3 pr-3" style="border:1px solid lightgrey;" id="bedroom"><input type="radio" style="display: none;" name="bedroom" id="bed" >4</label> 
+                        <label class="pt-2 pb-2 pl-3 pr-3" style="border:1px solid lightgrey;" id="bedroom"><input type="radio" style="display: none;" name="bedroom" id="bed" >5</label> 
+                        <label class="pt-2 pb-2 pl-3 pr-3" style="border:1px solid lightgrey;" id="bedroom"><input type="radio" style="display: none;" name="bedroom" id="bed" >6</label> 
+                    </div>
+                    <div >
+                        <p class='mt-4 text-muted'>select number of bath rooms</p>
+                        <label class="pt-2 pb-2 pl-3 pr-3" style="border:1px solid lightgrey; " id="bathroom"><input type="radio" name="bathroom" style="display: none;" id="bath" >1</label> 
+                        <label class="pt-2 pb-2 pl-3 pr-3" style="border:1px solid lightgrey;" id="bathroom"><input type="radio" style="display: none;" name="bathroom" id="bath">2</label> 
+                        <label class="pt-2 pb-2 pl-3 pr-3" style="border:1px solid lightgrey;" id="bathroom"><input type="radio" style="display: none;" name="bathroom" id="bath">3</label> 
+                        <label class="pt-2 pb-2 pl-3 pr-3" style="border:1px solid lightgrey;" id="bathroom"><input type="radio" style="display: none;" name="bathroom" id="bath">4</label> 
+                        <label class="pt-2 pb-2 pl-3 pr-3" style="border:1px solid lightgrey;" id="bathroom"><input type="radio" style="display: none;" name="bathroom" id="bath">5</label> 
+                        <label class="pt-2 pb-2 pl-3 pr-3" style="border:1px solid lightgrey;" id="bathroom"><input type="radio" style="display: none;" name="bathroom" id="bath">6</label> 
+                    </div>
+              </div>
+              <span onclick="get_estimated_price()" class="btn btn-success">Give Estimated Price</span>
+            </div>
+            <div class="alert alert-success m-2 text-center" id="result_panel" style="display: none;" role="alert">
+              <span id="result_label"></span> <strong id ="result_value"></strong>
+            </div>
+            <br>
+            <div class="card-footer text-muted">
+              Developed By CoderBobby
+            </div>
+          </div>
+
+      </div>
+
+  </body>
+</html>
